@@ -807,8 +807,15 @@ class IFriend{
 		double[] tempSalaryArray = new double[salaryArray.length - 1];
 		String[] tempBirthDayArray = new String[birthDayArray.length - 1];
 		
+		sortByContactId();
+		
+		for(int i = contactIdArray.length - 1; i > x; i--){
+			contactIdArray[i] = contactIdArray[i-1];
+		}
+		
 		for (int i = 0, j = 0; i < contactIdArray.length; i++) {
 			if(i == x){
+				idCount--;
 				continue;
 			}
 			tempContactIdArray[j] = contactIdArray[i];
@@ -830,6 +837,9 @@ class IFriend{
     
     //-------------------search name or phone number existance----------------------//
     public static int search(String query){
+		
+		sortByContactId();
+		
 		for(int i = 0; i < contactIdArray.length; i++){
 			if(nameArray[i].equals(query) || phoneNumberArray[i].equals(query)){
 				return i;
@@ -847,6 +857,40 @@ class IFriend{
 		}
 		return false;
 	}
+	
+	//-------------------sort by contact id----------------------//
+    public static void sortByContactId(){
+        for(int i = 0; i < contactIdArray.length - 1; i++) {
+            for(int j = 0; j < contactIdArray.length - 1 - i; j++){
+                if(contactIdArray[j].compareTo(contactIdArray[j + 1]) > 0){       //compares two strings lexicographically
+
+					String temp1 = contactIdArray[j];
+                    contactIdArray[j] = contactIdArray[j + 1];
+                    contactIdArray[j + 1] = temp1;
+
+                    String temp2 = nameArray[j];
+                    nameArray[j] = nameArray[j + 1];
+                    nameArray[j + 1] = temp2;
+
+					String temp3 = phoneNumberArray[j];
+                    phoneNumberArray[j] = phoneNumberArray[j + 1];
+                    phoneNumberArray[j + 1] = temp3;
+
+					String temp4 = companyNameArray[j];
+                    companyNameArray[j] = companyNameArray[j + 1];
+                    companyNameArray[j + 1] = temp4;
+
+					double temp5 = salaryArray[j];
+                    salaryArray[j] = salaryArray[j + 1];
+                    salaryArray[j + 1] = temp5;
+
+					String temp6 = birthDayArray[j];
+                    birthDayArray[j] = birthDayArray[j + 1];
+                    birthDayArray[j + 1] = temp6;
+                }
+            }
+        }
+    }
 
 	//-------------------sort by name----------------------//
     public static void sortByName(){
