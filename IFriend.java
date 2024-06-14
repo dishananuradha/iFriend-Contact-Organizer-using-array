@@ -317,13 +317,13 @@ class IFriend{
 				query = input.nextLine().toLowerCase();
 			}
 			
-			//-----------------is there any matching name or phone nnumber?-----------------//
+			//-----------------is there any matching name or phone number?-----------------//
 			if(search(query) == -1){
 				//------------no match found-----------//
 				System.out.println("\n\tThere is no matching name or phone number...");
 			}else{
 				//--------matching contact found-------//
-				printArray(query);
+				printContactInfo(query);
 				System.out.println("\n\n");
 				
 				L1:while(true){
@@ -557,7 +557,7 @@ class IFriend{
 				System.out.printf("\n\tNo contacts found for %s...", query);
 			}else{
 				//------matching contact found------//
-				printArray(query);
+				printContactInfo(query);
 				
 				System.out.print("\n\n  Do you want to delete this contact (Y/N): ");
 				char ch = input.next().charAt(0);
@@ -632,7 +632,7 @@ class IFriend{
 			}else{
 				//------matching contact found------//
 				//------show matching contacts------//
-				printArray(query);
+				printContactInfo(query);
 			}
 			
 			System.out.print("\n\n  Do you want to search another contact(Y/N): ");
@@ -994,8 +994,8 @@ class IFriend{
         }
     }
     
-    //----------------print array-------------------//
-    public static void printArray(String query){
+    //----------------print contact info-------------------//
+    public static void printContactInfo(String query){
 		System.out.printf("\n\n\tContact ID\t\t: %s", contactIdArray[search(query)]);
 		System.out.printf("\n\tName\t\t\t: %s", nameArray[search(query)]);
 		System.out.printf("\n\tPhone Number\t\t: %s", phoneNumberArray[search(query)]);
