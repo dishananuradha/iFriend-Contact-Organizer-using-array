@@ -996,12 +996,14 @@ class IFriend{
     
     //----------------print contact info-------------------//
     public static void printContactInfo(String query){
-		System.out.printf("\n\n\tContact ID\t\t: %s", contactIdArray[search(query)]);
-		System.out.printf("\n\tName\t\t\t: %s", nameArray[search(query)]);
-		System.out.printf("\n\tPhone Number\t\t: %s", phoneNumberArray[search(query)]);
-		System.out.printf("\n\tCompany Name\t\t: %s", companyNameArray[search(query)]);
-		System.out.printf("\n\tSalary\t\t\t: %s", salaryArray[search(query)]);
-		System.out.printf("\n\tB'Day(YYYY-MM-DD)\t: %s", birthDayArray[search(query)]);
+		
+		int index = search(query);
+		System.out.printf("\n\n\tContact ID\t\t: %s", contactIdArray[index]);
+		System.out.printf("\n\tName\t\t\t: %s", nameArray[index]);
+		System.out.printf("\n\tPhone Number\t\t: %s", phoneNumberArray[index]);
+		System.out.printf("\n\tCompany Name\t\t: %s", companyNameArray[index]);
+		System.out.printf("\n\tSalary\t\t\t: %s", salaryArray[index]);
+		System.out.printf("\n\tB'Day(YYYY-MM-DD)\t: %s", birthDayArray[index]);
 	}
 
 	//----------------print contacts table-------------------//
