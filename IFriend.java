@@ -23,7 +23,6 @@ class IFriend{
 		Scanner input = new Scanner(System.in);
 		
 		while(true){
-			
 			System.out.println("\n");
 			System.out.println("            /$$ /$$$$$$$$ /$$$$$$$  /$$$$$$ /$$$$$$$$ /$$   /$$ /$$$$$$$");
 			System.out.println("           |__/| $$_____/| $$__  $$|_  $$_/| $$_____/| $$$ | $$| $$__  $$");
@@ -837,7 +836,6 @@ class IFriend{
     
     //-------------------search name or phone number existance----------------------//
     public static int search(String query){
-		
 		sortByContactId();
 		
 		for(int i = 0; i < contactIdArray.length; i++){
@@ -996,8 +994,8 @@ class IFriend{
     
     //----------------print contact info-------------------//
     public static void printContactInfo(String query){
-		
 		int index = search(query);
+		
 		System.out.printf("\n\n\tContact ID\t\t: %s", contactIdArray[index]);
 		System.out.printf("\n\tName\t\t\t: %s", nameArray[index]);
 		System.out.printf("\n\tPhone Number\t\t: %s", phoneNumberArray[index]);
