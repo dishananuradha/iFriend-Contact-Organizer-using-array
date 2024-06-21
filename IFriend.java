@@ -563,7 +563,7 @@ class IFriend{
 				
 				if(ch == 'Y' || ch == 'y'){
 
-					deleteElements(search(query));    //delete the element
+					delete(search(query));    //delete the element
 					System.out.println("\n\tContact has been deleted successfully...");
 
 				}else if(ch == 'N' || ch == 'n'){
@@ -798,7 +798,7 @@ class IFriend{
     }
     
     //-------------------delete elements----------------------//
-    public static void deleteElements(int x) {
+    public static void delete(int x) {
         String[] tempContactIdArray = new String[contactIdArray.length - 1];
 		String[] tempNameArray = new String[nameArray.length - 1];
 		String[] tempPhoneNumberArray = new String[phoneNumberArray.length - 1];
